@@ -36,6 +36,14 @@ app.get('/inventory/:id', (req, res)=>{
     })    
 });
 
+app.delete('/inventory/:id', (req, res) => {
+    db.query('DELETE FROM `items` WHERE `id` = ?', [req.param.id], (err, results) => {
+        if(err) throw(err);
+        console.log("Deleted succesfully");
+        res.send("Deleted succefully")
+    })    
+})
+
 app.listen(port,() => {
     console.log('Listening to port ' + port)
 })
