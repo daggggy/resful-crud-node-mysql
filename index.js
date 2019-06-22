@@ -12,6 +12,13 @@ const db = mysql.createConnection ({
     database: 'inventory'
 });
 
+db.connect((err) => {
+    if(err)
+        throw(err)
+    else
+        console.log('Connection Success');
+});
+
 app.listen(port,() => {
     console.log('Listening to port ' + port)
 })
