@@ -9,7 +9,8 @@ const db = mysql.createConnection ({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'inventory'
+    database: 'inventory',
+    multipleStatements: true
 });
 
 db.connect((err) => {
@@ -41,6 +42,17 @@ app.delete('/inventory/:id', (req, res) => {
         if(err) throw(err);
         console.log("Deleted succesfully");
         res.send("Deleted succefully")
+    })    
+})
+
+app.post('/inventory', (req, res) => {
+    let emp = req.body;
+    db.query('SET @id = ?, SET @name = ?, SET @qty = ?, SET @amount = ?; CALL addOrEditItem(@id,@name,@qty,@amount;', [emp.id, emp.name, emp.qty, emp.amount], (err, results) => {
+        if(err) throw(err);
+            rows.forEach(element => {
+                if(element.constructor == Array)
+                res.send("Added " + element[0].id)
+            })
     })    
 })
 
