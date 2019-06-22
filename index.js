@@ -19,6 +19,15 @@ db.connect((err) => {
         console.log('Connection Success');
 });
 
+app.get('/inventory', (req, res)=>{
+    let dataQuery = "SELECT * FROM `items";
+    let query = db.query(dataQuery, (err, results) => {
+        if(err) throw(err);
+        console.log(results);
+        res.send(results)
+    })    
+});
+
 app.listen(port,() => {
     console.log('Listening to port ' + port)
 })
