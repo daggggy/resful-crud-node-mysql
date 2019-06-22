@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/daggggy/resful-crud-node-mysql/issues"
   },
-  "homepage": "https://github.com/daggggy/resful-crud-node-mysql#readme"
+  "homepage": "https://github.com/daggggy/resful-crud-node-mysql#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
