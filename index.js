@@ -49,13 +49,11 @@ app.delete('/inventory/:id', (req, res) => {
 })
 
 app.post('/inventory', (req, res) => {
-    let emp = req.body;
-    db.query('SET @id = ?, SET @name = ?, SET @qty = ?, SET @amount = ?; CALL addOrEditItem(@id,@name,@qty,@amount;', [emp.id, emp.name, emp.qty, emp.amount], (err, results) => {
+    let post = req.body;
+    db.query('CALL addOrEditItem(?,?,?,?);', [0, post.name, post.qty, post.amount], (err, results) => {
         if(err) throw(err);
-            rows.forEach(element => {
-                if(element.constructor == Array)
-                res.send("Added " + element[0].id)
-            })
+        console.log(results);
+        res.send("Created")
     })    
 })
 
