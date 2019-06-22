@@ -1,0 +1,19 @@
+{
+  "name": "resful-crud-node-mysql",
+  "version": "1.0.0",
+  "description": "practical coding exam for questronix",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daggggy/resful-crud-node-mysql.git"
+  },
+  "author": "deogracias rey bonifacio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daggggy/resful-crud-node-mysql/issues"
+  },
+  "homepage": "https://github.com/daggggy/resful-crud-node-mysql#readme"
+}
