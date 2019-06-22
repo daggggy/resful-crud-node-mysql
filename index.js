@@ -4,6 +4,8 @@ const bodyparser = require('body-parser')
 
 const app = express()
 
+app.use(bodyparser)
+
 const port = 3000
 
 const db = mysql.createConnection ({
