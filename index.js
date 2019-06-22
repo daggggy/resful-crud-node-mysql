@@ -56,6 +56,14 @@ app.post('/inventory', (req, res) => {
     })    
 })
 
+app.put('/inventory', (req, res) => {
+    let emp = req.body;
+    db.query('SET @id = ?, SET @name = ?, SET @qty = ?, SET @amount = ?; CALL addOrEditItem(@id,@name,@qty,@amount;', [emp.id, emp.name, emp.qty, emp.amount], (err, results) => {
+        if(err) throw(err);
+        res.send('Updated succesfully')
+    })    
+})
+
 app.listen(port,() => {
     console.log('Listening to port ' + port)
 })
