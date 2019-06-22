@@ -4,7 +4,7 @@ const bodyparser = require('body-parser')
 
 const app = express()
 
-app.use(bodyparser)
+app.use(bodyparser.json())
 
 const port = 3000
 
